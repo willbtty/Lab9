@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <p id="para" style="color:black">Change the color of this text. You can make it whatever color you want on the
+            rbg scale.
+        </p>
+    
+        
+        <label for="idk">Enter RBG values (e.g. rgb(255,0,0)): </label>
+        <input type="text" id="rgb" name="idk">
+        <br><br>
+        <button onclick="changeColor()">Change Color</button>
+        <script>
+        function changeColor(){
+            var userInput = document.getElementById("rgb").value;
+            console.log(userInput);
+            document.getElementById("para").style.color = userInput;
+            if(userInput.startsWith("rgb(") && userInput.endsWith(")")) {
+                document.getElementById("para").style.color = userInput;
+            } else {
+                alert("Invalid RGB format. Make sure it starts with 'rgb(' and ends with ')' .");
+            }
+        }
+
+        </script>
+    </body>
+</html>
